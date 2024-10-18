@@ -7,3 +7,7 @@
 img{
     max-width: 100%;
 }
+
+header{
+    background-image: url(../img/wall.png);
+}

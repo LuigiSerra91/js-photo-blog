@@ -30,7 +30,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
         let markup = `
         <div class=" col-sm-12 col-md-6 col-lg-4">
                  <div class="card rounded-0" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
+                    <img class="card-img-top p-2" src="./assets/img/01.jpg" alt="Card image cap">
                     <div class="card-body">
                     <p class="card-text">${title}</p>
                     </div>
@@ -48,3 +48,5 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   
     
     }).catch(err => console.log(err));
+
+    

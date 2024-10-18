@@ -26,3 +26,9 @@ main{
     font-family: "Rubik", sans-serif;
   
 }
+
+
+.card:hover{
+    rotate: 30deg;
+    scale: 1.2;
+}

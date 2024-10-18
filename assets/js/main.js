@@ -26,16 +26,16 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
       
       for (let i = 0; i < listAxios.length; i++){
         let listMarkup = listAxios[i]
-        let {title} = listMarkup
+        let {title,url} = listMarkup
         let markup = `
        
-              <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3">
-                    <div class="card rounded-0">
+              <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3 ">
+                    <div class="card rounded-0 mb-5 mt-5">
                         
-                        <img class="card-img-top p-2" src="./assets/img/01.jpg">
+                        <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
                         <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
-                        <div style="min-height: 80px;"  class="card-body">
-                        <p class="card-text">${title}</p>
+                        <div class="card-body">
+                        <p style="min-height: 80px;"  class="card-text">${title}</p>
                         </div>
                    </div>          
                 

@@ -16,12 +16,35 @@ Buon divertimento e confermate lettura come al solito
 
 */
 
+const cardEl = document.querySelector('.row')
+
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then(response => {
-      const mails = response.data;
+      const listAxios = response.data;
   
-      console.log(mails);
+      console.log(listAxios);
       
+      for (let i = 0; i < listAxios.length; i++){
+        let listMarkup = listAxios[i]
+        let {title} = listMarkup
+        let markup = `
+        <div class=" col-sm-12 col-md-6 col-lg-4">
+                 <div class="card rounded-0" style="width: 18rem;">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <div class="card-body">
+                    <p class="card-text">${title}</p>
+                    </div>
+                </div>
+         </div>
+      
+                      
+        
+        `
+      
+        
+      cardEl.innerHTML += markup
+      
+      }
   
     
     }).catch(err => console.log(err));

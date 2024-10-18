@@ -34,7 +34,7 @@ main{
 
 #card-hover:hover{
     rotate: 30deg;
-    scale: 1.2;
+    scale: 1.1;
     #pin-hover{
         display: none;
     }
@@ -53,4 +53,9 @@ main{
 
 .card{
     height: 50px;
+}
+
+p{
+    text-transform: capitalize;
+    font-family: "Edu TAS Beginner", cursive;
 }

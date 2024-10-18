@@ -34,7 +34,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
                         
                         <img class="card-img-top p-2" src="./assets/img/01.jpg">
                         <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
-                        <div class="card-body">
+                        <div style="min-height: 80px;"  class="card-body">
                         <p class="card-text">${title}</p>
                         </div>
                    </div>          

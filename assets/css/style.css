@@ -28,12 +28,15 @@ main{
 }
 
 
-.card:hover{
+#card-hover:hover{
     rotate: 30deg;
     scale: 1.2;
+    #pin-hover{
+        display: none;
+    }
 }
 
-.card{
+#card-hover{
     position: relative;
 }
 
@@ -43,6 +46,3 @@ main{
     
 }
 
-#pin-hover:hover{
-    display: none;
-}

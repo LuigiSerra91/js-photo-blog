@@ -29,8 +29,8 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
         let {title} = listMarkup
         let markup = `
        
-              <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 mt-5 d-flex justify-content-center">
-                    <div class="card rounded-0" style="width: 18rem;">
+              <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 mt-5">
+                    <div class="card rounded-0">
                         
                         <img class="card-img-top p-2" src="./assets/img/01.jpg">
                         <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >

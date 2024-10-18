@@ -32,3 +32,17 @@ main{
     rotate: 30deg;
     scale: 1.2;
 }
+
+.card{
+    position: relative;
+}
+
+#pin-hover{
+    position: absolute;
+    top: -13px;
+    
+}
+
+#pin-hover:hover{
+    display: none;
+}

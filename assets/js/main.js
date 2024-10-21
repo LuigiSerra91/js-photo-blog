@@ -50,11 +50,11 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
        
         
       cardEl.innerHTML += markup
+      array.push(url)
       
       
-      
-      let btnOpenEl = document.querySelector('.card-img-top')
-      
+      let btnOpenEl = document.querySelector('.card')
+     
       
       btnOpenEl.addEventListener('click', () => {
         

@@ -37,7 +37,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
               <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3 ">
                     <div class="card rounded-0 mb-5 mt-5">
                         
-                       <button class="btn-ul border-0"> <img style="height: 350px;"  class="card-img-top p-2" src="${url}"></button>
+                       <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
                         <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
                         <div class="card-body">
                         <p style="min-height: 80px;"  class="card-text">${title}</p>
@@ -51,18 +51,23 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
         
       cardEl.innerHTML += markup
       array.push(url)
-      const btnOpenEl = document.querySelector('.btn-ul')
+      
+      const btnOpenEl = document.querySelector('.card-img-top')
       
       
      
       
       btnOpenEl.addEventListener('click', () => {
+        let markupTwo = `
+        <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
+        
+        `
+        imgOverlayEl.innerHTML = markupTwo;
         const overlay = overlayEl.classList;
         overlay.add('d-inline');
         
        
     })
-
     
       }
 

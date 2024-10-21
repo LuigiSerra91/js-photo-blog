@@ -16,9 +16,10 @@ Buon divertimento e confermate lettura come al solito
 
 */
 const overlayEl = document.querySelector('.overlay')
-const imgOverlayEl =document.querySelector('.card-hover')
+const imgOverlayEl = document.querySelector('.img-overlay')
 const cardEl = document.querySelector('.row')
-
+const btnClose = document.getElementById('btn-close')
+const btnOpenEl = document.querySelector('.btn-ul')
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then(response => {
       const listAxios = response.data;
@@ -28,12 +29,13 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
       for (let i = 0; i < listAxios.length; i++){
         let listMarkup = listAxios[i]
         let {title,url} = listMarkup
+        
         let markup = `
        
               <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3 ">
                     <div class="card rounded-0 mb-5 mt-5">
                         
-                        <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
+                       <button class="btn-ul border-0"> <img style="height: 350px;"  class="card-img-top p-2" src="${url}"></button>
                         <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
                         <div class="card-body">
                         <p style="min-height: 80px;"  class="card-text">${title}</p>
@@ -49,14 +51,17 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
       
       }
 
-     
+      btnOpenEl.addEventListener('click', () => {
+        const overlay = overlayEl.classList;
+        overlay.add('d-inline');
+    })
     
     }).catch(err => console.log(err));
 
-
-    imgOverlayEl.addEventListener("click", function(){
-      overlayEl.classList.remove('d-none')
-      
-      
-    });
+    
   
+  
+  btnClose.addEventListener('click', () => {
+      const overlay = overlayEl.classList;
+      overlay.toggle('d-none');
+  })

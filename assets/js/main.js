@@ -50,24 +50,27 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
        
         
       cardEl.innerHTML += markup
-      array.push(url)
-      
-      const btnOpenEl = document.querySelector('.card-img-top')
       
       
-     
+      
+      let btnOpenEl = document.querySelector('.card-img-top')
+      
       
       btnOpenEl.addEventListener('click', () => {
+        
+        
         let markupTwo = `
-        <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
+        <img style="height: 600px;"  class="card-img-top p-2" src="${url}">
         
         `
-        imgOverlayEl.innerHTML = markupTwo;
+        imgOverlayEl.innerHTML += markupTwo;
         const overlay = overlayEl.classList;
         overlay.add('d-inline');
         
        
     })
+      
+     
     
       }
 

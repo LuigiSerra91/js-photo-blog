@@ -15,7 +15,8 @@ Buon divertimento e confermate lettura come al solito
 
 
 */
-
+const overlayEl = document.querySelector('.overlay')
+const imgOverlayEl =document.querySelector('.card-hover')
 const cardEl = document.querySelector('.row')
 
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
@@ -42,13 +43,20 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
             </div>
          
         `
-      
+       
         
       cardEl.innerHTML += markup
       
       }
-  
+
+     
     
     }).catch(err => console.log(err));
 
-    
+
+    imgOverlayEl.addEventListener("click", function(){
+      overlayEl.classList.remove('d-none')
+      
+      
+    });
+  

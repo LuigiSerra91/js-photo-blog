@@ -15,16 +15,18 @@ Buon divertimento e confermate lettura come al solito
 
 
 */
-const overlayEl = document.querySelector('.overlay')
-const imgOverlayEl = document.querySelector('.img-overlay')
-const cardEl = document.querySelector('.row')
 const btnClose = document.getElementById('btn-close')
-const btnOpenEl = document.querySelector('.btn-ul')
+const cardEl = document.querySelector('.row')
+const imgOverlayEl = document.querySelector('.img-overlay')
+const overlayEl = document.querySelector('.overlay')
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then(response => {
       const listAxios = response.data;
-  
       console.log(listAxios);
+      let array = []
+      console.log(array);
+      
+      
       
       for (let i = 0; i < listAxios.length; i++){
         let listMarkup = listAxios[i]
@@ -48,20 +50,41 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
        
         
       cardEl.innerHTML += markup
+      array.push(url)
+      const btnOpenEl = document.querySelector('.btn-ul')
       
-      }
-
+      
+     
+      
       btnOpenEl.addEventListener('click', () => {
         const overlay = overlayEl.classList;
         overlay.add('d-inline');
+        
+       
     })
+
+    
+      }
+
+      
+      
     
     }).catch(err => console.log(err));
 
     
   
-  
-  btnClose.addEventListener('click', () => {
+ 
+    
+    btnClose.addEventListener('click', () => {
       const overlay = overlayEl.classList;
       overlay.toggle('d-none');
   })
+    
+    
+    
+
+ 
+
+
+  
+  

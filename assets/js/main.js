@@ -53,7 +53,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
       array.push(url)
       
       
-      let btnOpenEl = document.querySelectora('.card')
+      let btnOpenEl = document.querySelector('.card')
      
       
       btnOpenEl.addEventListener('click', () => {

@@ -15,66 +15,62 @@ Buon divertimento e confermate lettura come al solito
 
 
 */
+const imgOverlayEl = document.querySelector('.img-overlay')
 const btnClose = document.getElementById('btn-close')
 const cardEl = document.querySelector('.row')
-const imgOverlayEl = document.querySelector('.img-overlay')
 const overlayEl = document.querySelector('.overlay')
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then(response => {
-      const listAxios = response.data;
+      let listAxios = response.data;
       console.log(listAxios);
-      let array = []
-      console.log(array);
       
       
       
-      for (let i = 0; i < listAxios.length; i++){
-        let listMarkup = listAxios[i]
-        let {title,url} = listMarkup
-        
+      
+      listAxios.forEach((element)=>{
+        console.log(element);
+        const {url, title} = element
         let markup = `
        
-              <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3 ">
-                    <div class="card rounded-0 mb-5 mt-5">
-                        
-                       <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
-                        <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
-                        <div class="card-body">
-                        <p style="min-height: 80px;"  class="card-text">${title}</p>
-                        </div>
-                   </div>          
-                
-            </div>
-         
-        `
-       
-        
-      cardEl.innerHTML += markup
-      array.push(url)
+        <div id="card-hover" class="col-sm-12 col-md-6 col-lg-4 g-3 ">
+              <div class="card rounded-0 mb-5 mt-5">
+                  
+                 <img style="height: 350px;"  class="card-img-top p-2" src="${url}">
+                  <img id="pin-hover" class="card-img-top p-2" style="height: 40px;" src="./assets/img/pin.svg" >
+                  <div class="card-body">
+                  <p style="min-height: 80px;"  class="card-text">${title}</p>
+                  </div>
+             </div>          
+          
+      </div>
+   
+  `
+ 
+  
+           cardEl.innerHTML += markup
+              let btnOpenEl = document.querySelector('.card')
       
-      
-      let btnOpenEl = document.querySelector('.card')
-     
-      
-      btnOpenEl.addEventListener('click', () => {
+        btnOpenEl.addEventListener('click', () => {
         
         
-        let markupTwo = `
-        <img style="height: 600px;"  class="card-img-top p-2" src="${url}">
         
-        `
-        imgOverlayEl.insertAdjacentHTML('beforeend', markupTwo)
-        const overlay = overlayEl.classList;
-        overlay.add('d-inline');
-        
-       
-    })
-      
-     
-    
-      }
+          let markupTwo = `
+          <img style="height: 600px;"  class="card-img-top p-2" src="${url}">
+          
+          `
+          imgOverlayEl.insertAdjacentHTML('beforeend', markupTwo)
 
+          const overlay = overlayEl.classList;
+          overlay.add('d-inline');
+          
+         
+      })
+  
       
+        
+      })
+      
+     
       
     
     }).catch(err => console.log(err));

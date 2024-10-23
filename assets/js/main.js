@@ -19,6 +19,7 @@ const imgOverlayEl = document.querySelector('.img-overlay')
 const btnClose = document.getElementById('btn-close')
 const cardEl = document.querySelector('.row')
 const overlayEl = document.querySelector('.overlay')
+let btnOpenEl = document.querySelector('.card')
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then(response => {
       let listAxios = response.data;
@@ -27,8 +28,8 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
       
       
       
-      listAxios.forEach((element)=>{
-        console.log(element);
+      listAxios.forEach((element,index, array)=>{
+        console.log(element, array, index);
         const {url, title} = element
         let markup = `
        
@@ -48,23 +49,27 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
  
   
            cardEl.innerHTML += markup
-              let btnOpenEl = document.querySelector('.card')
-      
-        btnOpenEl.addEventListener('click', () => {
+              
+              let imgElement = document.querySelectorAll('img')
+              imgElement.forEach(imgElement => {
+                let cardSrc = imgElement.src
+                imgElement.addEventListener('click', () => {
         
         
         
-          let markupTwo = `
-          <img style="height: 600px;"  class="card-img-top p-2" src="${url}">
-          
-          `
-          imgOverlayEl.insertAdjacentHTML('beforeend', markupTwo)
-
-          const overlay = overlayEl.classList;
-          overlay.add('d-inline');
-          
-         
-      })
+                  let markupTwo = `
+                  <img style="height: 600px;"  class="card-img-top p-2" src="${cardSrc}">
+                  
+                  `
+                  imgOverlayEl.insertAdjacentHTML('beforeend', markupTwo)
+        
+                  const overlay = overlayEl.classList;
+                  overlay.add('d-inline');
+                  
+                 
+              })
+              })
+        
   
       
         

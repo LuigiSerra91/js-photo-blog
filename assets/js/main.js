@@ -57,6 +57,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
         
         
                   let markupTwo = `
+                  
                   <img style="height: 600px;"  class="card-img-top p-2" src="${cardSrc}">
                   
                   `

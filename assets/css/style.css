@@ -83,6 +83,7 @@ p{
     -ms-transform: translate(-50%,-50%);
 }
 
-#btn-close{
+.btn-overlay{
     text-align: center;
+    margin-top: 100px;
 }
